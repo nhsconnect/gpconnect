@@ -1,5 +1,6 @@
 ---
 title: Medication guidance
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Design/Medications-and-medical-device-guidance?version=current
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

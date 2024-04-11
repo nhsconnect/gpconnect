@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; ReferralRequest examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Referral-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

@@ -1,5 +1,6 @@
 ---
 title: Interaction IDs
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/integrate-with-spine/interaction-ids
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar

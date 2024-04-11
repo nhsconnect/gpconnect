@@ -1,5 +1,6 @@
 ---
 title: Multi area searches
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Multi-area-searches?version=current
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar

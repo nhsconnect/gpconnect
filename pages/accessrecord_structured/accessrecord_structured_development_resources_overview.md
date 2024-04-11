@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; resource population fundamentals
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Resource-population-fundamentals?version=current
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

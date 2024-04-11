@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; Problems examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Problem-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -38,7 +39,6 @@ The following is a set of request/response examples for Problems:
 
 {% include accessrecord_structured/problems_response1.json %}
 
-
 </div>
 
 <div role="tabpanel" class="tab-pane" id="example2">
@@ -61,7 +61,6 @@ The following is a set of request/response examples for Problems:
 
 {% include accessrecord_structured/problems_response2.json %}
 
-
 </div>
 
 <div role="tabpanel" class="tab-pane" id="example3">
@@ -83,7 +82,6 @@ The following is a set of request/response examples for Problems:
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include accessrecord_structured/problems_response3.json %}
-
 
 </div>
 </div>

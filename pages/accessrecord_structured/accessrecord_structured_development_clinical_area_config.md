@@ -1,5 +1,6 @@
 ---
 title: Configuration for supported clinical areas
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Configuration-for-supported-clinical-areas?version=current
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar

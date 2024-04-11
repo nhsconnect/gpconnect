@@ -1,6 +1,7 @@
 ---
 title: Branch surgeries
-keywords: development 
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/branch-surgeries
+keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_branch_surgeries.html

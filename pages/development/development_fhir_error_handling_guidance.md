@@ -1,5 +1,6 @@
 ---
 title: Error handling
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/error-handling
 keywords: fhir, development, operation outcome, error
 tags: [fhir,development,error]
 sidebar: overview_sidebar

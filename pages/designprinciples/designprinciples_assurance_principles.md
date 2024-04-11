@@ -1,5 +1,6 @@
 ---
 title: Assurance principles
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Design/Assurance-principles?version=current
 keywords: development, assurance
 tags: [development,testing,assurance]
 sidebar: overview_sidebar

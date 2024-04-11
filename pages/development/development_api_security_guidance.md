@@ -1,5 +1,6 @@
 ---
 title: Security
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/security
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
@@ -30,7 +31,6 @@ Provider systems:
 - MAY authorise access to API endpoints through examining acceptable values in the JSON Web Tokens (JWT) requested_scope claim
 
 - SHALL risk-manage the security of the endpoints of the Transport Layer Security (TLS) communications, so as to prevent inappropriate risks (for example, audit logging of the GET parameters into an unprotected audit log)
-
 
 ## Security testing ##
 
@@ -88,7 +88,6 @@ Provider systems SHALL ensure no sensitive data leaks into a browser cache by se
 ```http
 Cache-Control: no-store
 ```
-
 
 ## Authorisation of access to endpoints ##
 

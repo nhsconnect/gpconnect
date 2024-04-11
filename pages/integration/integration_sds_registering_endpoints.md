@@ -1,5 +1,6 @@
 ---
 title: Registering systems
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/integrate-with-spine/spine-directory-service#registering-systems
 keywords: spine, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar
@@ -78,7 +79,7 @@ In order to allow for practice specific routing using endpoint, all systems SHAL
 
 A CMA type endpoint refers to an endpoint which is a combined MHS system and accredited system endpoint. There will be a 1-1 mapping between an Accredited System (uniquely identified by an ASID) record and a Message Handling System (MHS) record. A single MHS record SHALL be associated with a given ASID and interaction ID.
 
-### 3.2 GP Connect Interaction IDs on MHS and AS records  ###
+### 3.2 GP Connect Interaction IDs on MHS and AS records ###
 
 GP Connect Interaction IDs SHALL be registered on both MHS and AS records (using a CMA type endpoint).
 
@@ -106,19 +107,19 @@ An example of a FHIR server root URL for a [Retrieve a patient's structured reco
 
 Note that the `/Patient/$gpc.getstructuredrecord` is NOT added.
 
-In line with this, provider systems SHOULD perform checks that the FHIR request received is a reasonable means to request the resource in view given the specified interaction. 
+In line with this, provider systems SHOULD perform checks that the FHIR request received is a reasonable means to request the resource in view given the specified interaction.
 
 ### 3.6 FHIR service root URLs associated with a given product set SHALL use same FHIR version ###
 
-Where a provider moves in future to a later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. FHIR server root URLs defined for a specific product set SHALL all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable. 
+Where a provider moves in future to a later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. FHIR server root URLs defined for a specific product set SHALL all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable.
 
-For example, all interactions associated with the Appointment Management capability pack in a given product set must refer to the same FHIR server, so that the resource references for ‘Read Appointment’ and ‘Amend’ appointment would be locally resolvable to the same resource on the same FHIR Server. 
+For example, all interactions associated with the Appointment Management capability pack in a given product set must refer to the same FHIR server, so that the resource references for ‘Read Appointment’ and ‘Amend’ appointment would be locally resolvable to the same resource on the same FHIR Server.
 
 ### 3.7 Acceptable use of ASID information in HTTP Headers ###
 
-Source and destination ASID information is passed to the provider system from the Spine Security Proxy. Providers SHALL use this information for audit and debugging purposes only, and SHALL NOT use these headers to perform routing or lookups. 
+Source and destination ASID information is passed to the provider system from the Spine Security Proxy. Providers SHALL use this information for audit and debugging purposes only, and SHALL NOT use these headers to perform routing or lookups.
 
-It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice-specific ODS codes present in the FHIR server root URL. 
+It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice-specific ODS codes present in the FHIR server root URL.
 
 ---
 

@@ -1,13 +1,12 @@
 ---
 title: FHIR&reg; (Diary Entry) ProcedureRequest examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Diary-entry-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_fhir_examples_diaryentries.html
 summary: "Access Record Structured FHIR examples"
 ---
-
-
 
 The following is a set of request/response examples for (Diary Entry) ProcedureRequest:
 
@@ -38,7 +37,6 @@ The following is a set of request/response examples for (Diary Entry) ProcedureR
 
 {% include accessrecord_structured/diaryentries_response1.json %}
 
-
 </div>
 <!--
 <div role="tabpanel" class="tab-pane" id="example2">
@@ -61,7 +59,6 @@ The following is a set of request/response examples for (Diary Entry) ProcedureR
 
 {% include accessrecord_structured/immunizations_response2.json %}
 
-
 </div>
 
 <div role="tabpanel" class="tab-pane" id="example3">
@@ -83,7 +80,6 @@ The following is a set of request/response examples for (Diary Entry) ProcedureR
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include accessrecord_structured/immunizations_response3.json %}
-
 
 </div> -->
 </div>

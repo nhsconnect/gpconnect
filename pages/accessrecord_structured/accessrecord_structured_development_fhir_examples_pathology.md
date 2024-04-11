@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; Investigations examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Investigation-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

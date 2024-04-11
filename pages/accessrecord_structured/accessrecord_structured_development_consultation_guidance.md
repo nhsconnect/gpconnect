@@ -1,5 +1,6 @@
 ---
 title: Consultation
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Design/Consultations-guidance?version=current
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar

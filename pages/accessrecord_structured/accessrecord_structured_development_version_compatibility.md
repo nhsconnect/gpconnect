@@ -1,5 +1,6 @@
 ---
 title: API version compatibility
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/API-version-compatibility?version=current
 keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

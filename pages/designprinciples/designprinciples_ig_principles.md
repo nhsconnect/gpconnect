@@ -1,5 +1,6 @@
 ---
 title: Information governance principles
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Design/Information-governance-principles?version=current
 keywords: engage, fot, information, governance, infogov, ig
 tags: [information_governance,engagement,commissioning,first_of_type]
 sidebar: overview_sidebar

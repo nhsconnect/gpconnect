@@ -1,5 +1,6 @@
 ---
 title: Known issues
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/access-record-structured/known-issues---access-record-structured
 keywords: structured, design, known issues, bugs
 tags: [structured,design]
 sidebar: accessrecord_structured_sidebar

@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; Allergies examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Allergy-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -34,11 +35,9 @@ The following is a set of request/response examples for Allergies:
 
 {% include accessrecord_structured/allergies_request1.json %}
 
-
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include accessrecord_structured/allergies_response1.json %}
-
 
 </div>
 

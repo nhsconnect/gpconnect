@@ -1,5 +1,6 @@
 ---
 title: Clinical safety principles
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Design/Clinical-safety-principles?version=current
 keywords: safety, commissioning
 tags: [clinical_safety, commissioning, first_of_type]
 sidebar: overview_sidebar
@@ -14,13 +15,15 @@ The following principles and underlying detailed requirements are currently unde
 Clinical safety is about promoting, and helping embed, clinically safer working practice methods and proactive risk management for patient safety enabled by IT, with consistent application across the NHS.
 
 ## Information standards ##
-This is underpinned by the information standards for clinical risk management, providing a framework for national healthcare initiatives from the Department of Health, NHS England, the Care Quality Commission and other national health organisations and a mechanism for introducing requirements to which the NHS, those with whom it commissions services, and its IT system suppliers, must conform. 
+
+This is underpinned by the information standards for clinical risk management, providing a framework for national healthcare initiatives from the Department of Health, NHS England, the Care Quality Commission and other national health organisations and a mechanism for introducing requirements to which the NHS, those with whom it commissions services, and its IT system suppliers, must conform.
 
 ## Commissioning organisations ##
+
 Commissioning organisations for GP Connect must have a clinical safety framework compliant with Information Standard:
 
 ([SCCI0160: Clinical Risk Management: its Application in the Deployment and Use of Health IT Systems](http://content.digital.nhs.uk/isce/publication/SCCI0160){:target="_blank"})
-	
+
 and are responsible for assuring that deployment and implementation of consumer applications using the GP Connect APIs comply with this framework.
 
 ## Consumer and provider systems ##
@@ -37,8 +40,7 @@ Confirmation of compliance with the clinical safety standards as above will be s
 
 Commissioning clinical safety approval of the consumer system forms part of the NHS Digital requirements for deployment into live operation.
 
-Provider systems must also demonstrate standards compliance as part of the NHS Digital assurance processes. 
-
+Provider systems must also demonstrate standards compliance as part of the NHS Digital assurance processes.
 
 ## Demographic cross checking ##
 

@@ -1,5 +1,6 @@
 ---
 title: Diary entry guidance
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Design/Diary-entry-guidance?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -9,8 +10,8 @@ summary: "Guidance for populating and consuming the Diary Entry profile"
 
 ## What is a diary entry?
 
-A diary entry is primarily a proposal for clinical action to be undertaken at an indicative date in the future, which has not been completed or cancelled. 
-The diary entry is dated but unscheduled - that is, it is not an appointment (but may result in an appointment being created) and resources are not directly committed to it. 
+A diary entry is primarily a proposal for clinical action to be undertaken at an indicative date in the future, which has not been completed or cancelled.
+The diary entry is dated but unscheduled - that is, it is not an appointment (but may result in an appointment being created) and resources are not directly committed to it.
 The diary entry may be a reminder for a review, a follow up to a consultation / treatment / test, a recall or treatment to be provided according to a schedule.
 Diary entries may be known as 'recalls' within some GP clinical systems.
 
@@ -20,14 +21,14 @@ Some examples of actions which may be recorded as diary entries are:
 - Antipsychotic injections
 - Asthma review
 - Cytology Smear
-- Depo Provera 
+- Depo Provera
 - Diabetes review
 - Epilepsy review
 - Mental Health review
 - NHS Health checks (5years)
 - Over 75 Check
-- Seasonal influenza vaccination due 
-- Repeat Blood tests 
+- Seasonal influenza vaccination due
+- Repeat Blood tests
 
 Any future intention for a clinical action recorded as an Appointment, Warning / Alert or Task is out of scope.
 
@@ -56,12 +57,12 @@ GP clinical systems **MUST** populate the <code>code</code> with a valid SNOMED 
 
 GP clinical systems **MAY** include codes for incomplete diary entries which have a standard interpretation of a completed action (for example, procedure codes).
 These **MUST** be interpreted as incomplete by consumer systems.
-Consumer systems **MUST** ensure these are presented to system users in such a manner that it is clear and unambiguous that the coded item represents an incomplete planned action regardless of its text description or SNOMED CT meaning.  
+Consumer systems **MUST** ensure these are presented to system users in such a manner that it is clear and unambiguous that the coded item represents an incomplete planned action regardless of its text description or SNOMED CT meaning.
 The consumer system **MUST** maintain the diary entry's meaning as an incomplete planned action wherever the code element may be accessed or exported.
 
 ## Diary entry planned date
 
-The planned date may be a single date or a date range according to the source GP clinical system and local recording practice. 
+The planned date may be a single date or a date range according to the source GP clinical system and local recording practice.
 The GP clinical system provider is to determine whether its data supports the inclusion of a period for the planned date or can only meaningfully return a single planned date.
 Wherever feasible and meaningful, a date period is preferred.
 The planned date(s) may represent an earliest date, latest date, indicative date or a combination but this may vary by record / use and the resource will not provide distinctions in this respect.
