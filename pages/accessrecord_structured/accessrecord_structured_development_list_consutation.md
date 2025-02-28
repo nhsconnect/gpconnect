@@ -23,6 +23,10 @@ This top-level profile represents the structured consultation as a whole.
 List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR)|**.
 This level represents the Topic/Problem groupings within consultations.
 
+Topic level lists are the only type of list that can have a `meta.security` label applied to them to indicate they are
+not to be disclosed to the patient. See [Resources not to be disclosed to a
+patient](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details.
+
 List (Heading) **SHALL** be coded as **24781000000107 |Category (EHR)|**.
 This level represents the headings (SOAP heading) levels of the consultation structure that contain record entries.
 
@@ -63,6 +67,22 @@ The logical identifier of the `List` profile.
 The `List` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
+
+### meta.security ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+This is only applicable to consultation lists with a type of Topic.
+
+The security label(s) applicable to the resource.
+
+See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details on how to populate the element.
 
 ### status
 
