@@ -20,15 +20,26 @@ A two or three level <code>List</code> structure is used to represent structured
 List (Consultation) **SHALL** be coded as **325851000000107 |Consultation|**.
 This top-level profile represents the structured consultation as a whole.
 
+Consultation level lists can have a `meta.security` label applied to them to indicate they are not to be disclosed to the
+patient. See
+[Resources not to be disclosed to a patient](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient)
+for more details.
+
 List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR)|**.
 This level represents the Topic/Problem groupings within consultations.
 
-Topic level lists are the only type of list that can have a `meta.security` label applied to them to indicate they are
-not to be disclosed to the patient. See [Resources not to be disclosed to a
-patient](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details.
+Topic level lists can have a `meta.security` label applied to them to indicate they are not to be disclosed to the
+patient. See
+[Resources not to be disclosed to a patient](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient)
+for more details.
 
 List (Heading) **SHALL** be coded as **24781000000107 |Category (EHR)|**.
 This level represents the headings (SOAP heading) levels of the consultation structure that contain record entries.
+
+Heading level lists can have a `meta.security` label applied to them to indicate they are not to be disclosed to the
+patient. See
+[Resources not to be disclosed to a patient](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient)
+for more details.
 
 In the case of consultation which has a 'flat' structure, that is, contains record entries without a surrounding Topic/Heading structure, producer systems generate a List(Topic) level which links directly to record entries without the List(Heading) level.
 
