@@ -142,6 +142,19 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
     <tr>
+      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterPrescriptionType</code></td>
+      <td><code class="highlighter-rouge">Code</code></td>
+      <td>Optional</td>
+      <td>0..*</td>
+      <td>
+        This part parameter is not currently supported by the Access Record Structured API. It is included in the
+        documentation as the OperationDefinition profile is shared between direct care and patient facing use cases.
+        If the parameter is included in the request, it will be treated as not supported and returned as an issue as described in the
+        <a href="https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/API-version-compatibility?version=current#forwards-compatibility">forwards compatibility section</a>.
+     <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
+      </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">includeConsultations</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
@@ -191,6 +204,19 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
         Restrict the problems that are returned by their clinical status. <br/>
         Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code><br/>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterSignificance</code></td>
+      <td><code class="highlighter-rouge">Code</code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>
+        This part parameter is not currently supported by the Access Record Structured API. It is included in the
+        documentation as the OperationDefinition profile is shared between direct care and patient facing use cases.
+        If the parameter is included in the request, it will be treated as not supported and returned as an issue as described in the
+        <a href="https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/API-version-compatibility?version=current#forwards-compatibility">forwards compatibility section</a>.
+     <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>
       </td>
     </tr>
     <tr>
