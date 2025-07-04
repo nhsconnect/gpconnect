@@ -906,7 +906,8 @@ Examples of the payload requests and responses can be found here:
 
 - [Allergies - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_allergies.html)
 - [Medication - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_medication.html)
-- [Consultations and problems - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_consultations.html)
+- [Consultations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_consultations.html)
+- [Problems - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_problems.html)
 - [Immunizations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_immunizations.html)
 - [Uncategorised data - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
 - [Investigations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_pathology.html)
